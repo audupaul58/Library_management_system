@@ -1,0 +1,17 @@
+
+{% load static %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class=" bg-light">
+    <div class="container-fluid">
+      
+      {% if user.is_authenticated and user.is_superuser  %}
+          {% include 'library/add_book.html' %}
+      {% else %}
+          {% include 'profile.html' %}
+      {% endif %}
+  </div>
+</div>
+{% endblock %}

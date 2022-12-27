@@ -1,0 +1,20 @@
+{% extends 'student_navbar.html' %}
+
+{% block title %} Edit Profile {% endblock %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <form method="POST"> {% csrf_token %}
+            <p class="text-danger">you are about to delete <strong>{{object}}</strong> </p>
+    <button type="submit" class="btn btn-outline-primary mt-5">Delete</button>
+</form>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+   
+</script>
+{% endblock %}

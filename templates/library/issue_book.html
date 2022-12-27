@@ -1,0 +1,29 @@
+{% extends 'admin_navbar.html' %}
+{% load static %}
+{% block title %} Issue Book {% endblock %}
+{% load crispy_forms_tags%} 
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container mt-4">
+    <form method="POST"> {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6 m-auto">
+            {{ form| crispy}}
+            <button type="submit" class="btn btn-primary btn-circled">Issue Book</button>
+
+        </div>
+    </div>
+   
+
+</form>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Book Successfully Issued.")
+    document.location = "/issue_book"
+    {% endif %}
+</script>
+{% endblock %}
+
